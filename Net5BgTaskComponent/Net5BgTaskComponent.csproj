@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+      <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+      <CsWinRTComponent>true</CsWinRTComponent>
+      <CsWinRTEnableLogging>true</CsWinRTEnableLogging>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <GeneratedFilesDir Condition="'$(GeneratedFilesDir)'==''">$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Generated Files'))</GeneratedFilesDir>
+  </PropertyGroup>
+
+    <PropertyGroup>
+    <CopyLocalLockFileAssemblies Condition="$(CsWinRTComponent)==true">true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+        
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.0.0-preview4" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1-prerelease.201218.1" />
+  </ItemGroup>
+</Project>
