@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Net5BgTaskComponent\Net5BgTaskComponent.csproj" />
+  </ItemGroup>
+    
+    <!--Needed to add CsWinRT package to get rid of duplicate types-->
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1-prerelease.201218.1" />
+    </ItemGroup>
+    
+</Project>

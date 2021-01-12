@@ -9,7 +9,7 @@
   </PropertyGroup>
   
   <Target Name="CopyHostAssets">
-    <Copy SourceFiles="C:\Users\angzhang\.nuget\packages\microsoft.windows.cswinrt\$(CsWinRTVersion)\native\$(Platform)\WinRT.Host.dll"
+    <Copy SourceFiles="C:\Users\angzhang\.nuget\packages\microsoft.windows.cswinrt\$(CsWinRTVersion)\native\x64\WinRT.Host.dll"
           DestinationFolder="$(OutDir)" 
           UseHardlinksIfPossible="false" SkipUnchangedFiles="true" />
     

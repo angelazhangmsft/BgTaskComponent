@@ -173,6 +173,7 @@
     <Reference Include="Net5BgTaskComponent">
       <HintPath>..\Net5BgTaskComponent\Generated Files\Net5BgTaskComponent.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
+        <Implementation>WinRT.Host.dll</Implementation>
     </Reference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
