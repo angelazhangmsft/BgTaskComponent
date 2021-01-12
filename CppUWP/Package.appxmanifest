@@ -33,7 +33,17 @@
       </Extensions>
     </Application>
   </Applications>
-  <Capabilities>
+
+    <Extensions>
+        <Extension Category="windows.activatableClass.inProcessServer">
+            <InProcessServer>
+                <Path>WinRT.Host.dll</Path>
+                <ActivatableClass ActivatableClassId="Net5BgTaskComponent.BgTask" ThreadingModel="both" />
+            </InProcessServer>
+        </Extension>
+    </Extensions>
+
+    <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
 </Package>

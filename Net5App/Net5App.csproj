@@ -4,10 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Net5BgTaskComponent\Net5BgTaskComponent.csproj" />
+      <ProjectReference Include="..\Net5BgTaskComponent\Net5BgTaskComponent.csproj">
+      </ProjectReference>  
+      
   </ItemGroup>
     
     <!--Needed to add CsWinRT package to get rid of duplicate types-->

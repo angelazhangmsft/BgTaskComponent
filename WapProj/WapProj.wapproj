@@ -70,6 +70,8 @@
     <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Images\StoreLogo.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
+      <!--manual hack-->
+      <Content Include="..\Net5App\bin\Debug\net5.0-windows10.0.19041.0\WinRT.Host.dll"/> 
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
   <ItemGroup>

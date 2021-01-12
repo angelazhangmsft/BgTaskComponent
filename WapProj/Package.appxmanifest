@@ -40,14 +40,25 @@
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="Net5BgTaskComponent.BgTask">
-          <BackgroundTasks>
-            <Task Type="systemEvent"/>
-          </BackgroundTasks>
-        </Extension>
+          <Extension Category="windows.backgroundTasks" EntryPoint="Net5BgTaskComponent.BgTask">
+              <BackgroundTasks>
+                  <Task Type="systemEvent"/>
+              </BackgroundTasks>
+          </Extension>
+
       </Extensions>
     </Application>
   </Applications>
+
+    <Extensions>
+        <Extension Category="windows.activatableClass.inProcessServer">
+            <InProcessServer>
+                <Path>WinRT.Host.dll</Path>
+                <ActivatableClass ActivatableClassId="Net5BgTaskComponent.BgTask" ThreadingModel="both" />
+                <!--<ActivatableClass ActivatableClassId="Microsoft.UI.Xaml.Markup.ReflectionXamlMetadataProvider" ThreadingModel="both" />-->
+            </InProcessServer>
+        </Extension>
+    </Extensions>
  
 
   <Capabilities>
