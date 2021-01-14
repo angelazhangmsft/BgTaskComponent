@@ -1,5 +1,4 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using System;
+﻿using System;
 using System.Diagnostics;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
@@ -30,8 +29,8 @@ namespace Net5BgTaskComponent
             // Associate a cancellation handler with the background task.
             taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
 
-
             _taskInstance = taskInstance;
+
             SendToast();
 
             _periodicTimer = ThreadPoolTimer.CreatePeriodicTimer(new TimerElapsedHandler(PeriodicTimerCallback), TimeSpan.FromSeconds(1));

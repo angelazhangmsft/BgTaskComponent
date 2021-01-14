@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+   
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,10 +12,5 @@
       </ProjectReference>  
       
   </ItemGroup>
-    
-    <!--Needed to add CsWinRT package to get rid of duplicate types-->
-    <ItemGroup>
-        <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1-prerelease.201218.1" />
-    </ItemGroup>
     
 </Project>
