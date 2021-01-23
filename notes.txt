@@ -1,0 +1,32 @@
+Because the component implementation doesn't use the naming convention (see hosting.md), an explicit mapping is needed:
+
+WinRT.Host.runtimeconfig.json
+{
+    "runtimeOptions": {
+        "tfm": "net5.0",
+        "rollForward": "LatestMinor",
+        "framework": {
+            "name": "Microsoft.NETCore.App",
+            "version": "5.0.0"
+        }
+    },
+    "activatableClasses": {
+        "Net5BgTaskComponent.BgTask": "Net5BgTaskComponent.dll"
+    }
+}
+
+The WAP project's F5 loose AppX deploy folder (e.g., D:\git\BgTaskComponent\WapProj\bin\x64\Debug\AppX) needs several binaries binplaced to it:
+Microsoft.Windows.SDK.NET.dll
+Net5BgTaskComponent.dll
+WinRT.Host.dll
+WinRT.Host.Shim.dll
+WinRT.Runtime.dll
+
+I manually copied these from local build and nuget folders:
+D:\NUGET_PACKAGES\microsoft.windows.sdk.net.ref\10.0.19041.13\lib
+D:\NUGET_PACKAGES\microsoft.windows.cswinrt\1.1.1\lib\net5.0
+
+Once I took care of the missing Microsoft.Windows.SDK.NET.dll dependency, my BPs in generated sources began working.  VS reported this in the output pane:
+Extracted embedded document "D:\git\BgTaskComponent\Net5BgTaskComponent\WinRT.SourceGenerator\Generator.SourceGenerator\WinRT_Module.cs" to "C:\Users\SJONES~1.RED\AppData\Local\Temp\.vsdbgsrc\6d59387d1b1b827884233ca4bab2465b7e8890\WinRT_Module.cs"
+
+After these changes, a BP in Net5BgTaskComponent.BgTask.Run is now hit and I can debug (the toast notification code has some bugs)
