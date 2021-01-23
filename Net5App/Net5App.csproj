@@ -7,7 +7,12 @@
    
   </PropertyGroup>
 
-  <ItemGroup>
+    <ItemGroup>
+        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.13" />
+        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.13" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\Net5BgTaskComponent\Net5BgTaskComponent.csproj">
       </ProjectReference>  
       

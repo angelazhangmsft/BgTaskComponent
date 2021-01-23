@@ -9,11 +9,15 @@
   </PropertyGroup>
   
   <Target Name="CopyHostAssets">
-    <Copy SourceFiles="C:\Users\angzhang\.nuget\packages\microsoft.windows.cswinrt\$(CsWinRTVersion)\native\x64\WinRT.Host.dll"
-          DestinationFolder="$(OutDir)" 
+      <Copy SourceFiles="D:\git\cswinrt\src\_build\x64\Debug\WinRT.Host\bin\WinRT.Host.dll"
+          DestinationFolder="$(OutDir)"
           UseHardlinksIfPossible="false" SkipUnchangedFiles="true" />
+
+      <!--<Copy SourceFiles="D:\NUGET_PACKAGES\microsoft.windows.cswinrt\$(CsWinRTVersion)\native\x64\WinRT.Host.dll"
+          DestinationFolder="$(OutDir)" 
+          UseHardlinksIfPossible="false" SkipUnchangedFiles="true" />-->
     
-    <Copy SourceFiles="C:\Users\angzhang\.nuget\packages\microsoft.windows.cswinrt\$(CsWinRTVersion)\lib\net5.0\WinRT.Host.Shim.dll"
+    <Copy SourceFiles="D:\NUGET_PACKAGES\microsoft.windows.cswinrt\$(CsWinRTVersion)\lib\net5.0\WinRT.Host.Shim.dll"
           DestinationFolder="$(OutDir)" 
           UseHardlinksIfPossible="false" SkipUnchangedFiles="true" />
 

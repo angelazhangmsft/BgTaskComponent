@@ -6,5 +6,8 @@
             "name": "Microsoft.NETCore.App",
             "version": "5.0.0"
         }
+    },
+    "activatableClasses": {
+        "Net5BgTaskComponent.BgTask": "Net5BgTaskComponent.dll"
     }
 }

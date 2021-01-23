@@ -30,13 +30,12 @@ namespace Net5BgTaskComponent
             taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
 
             _taskInstance = taskInstance;
-
+             
             SendToast();
 
             _periodicTimer = ThreadPoolTimer.CreatePeriodicTimer(new TimerElapsedHandler(PeriodicTimerCallback), TimeSpan.FromSeconds(1));
-
         }
-
+        
         private void SendToast()
         {
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
