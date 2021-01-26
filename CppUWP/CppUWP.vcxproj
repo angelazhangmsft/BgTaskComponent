@@ -171,11 +171,29 @@
       <DeploymentContent>false</DeploymentContent>
     </Text>
   </ItemGroup>
+  <!-- Manual hacks: need to copy over 5 dlls -->
   <ItemGroup>
     <Content Include="..\x64\Debug\CppUWP\WinRT.Host.dll">
       <Link>WinRT.Host.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\x64\Debug\CppUWP\WinRT.Host.Shim.dll">
+      <Link>WinRT.Host.Shim.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\x64\Debug\CppUWP\WinRT.Runtime.dll">
+      <Link>WinRT.Runtime.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\x64\Debug\CppUWP\Microsoft.Windows.SDK.NET.dll">
+      <Link>Microsoft.Windows.SDK.NET.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\x64\Debug\CppUWP\Net5BgTaskComponent.dll">
+      <Link>Net5BgTaskComponent.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!-- WinMD reference to the bgtask -->
     <Reference Include="Net5BgTaskComponent">
       <HintPath>..\Net5BgTaskComponent\Generated Files\Net5BgTaskComponent.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>

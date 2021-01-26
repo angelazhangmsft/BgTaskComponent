@@ -39,10 +39,10 @@ namespace Net5BgTaskComponent
 
         private void SendToast()
         {
-            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText02);
             XmlNodeList textElements = toastXml.GetElementsByTagName("text");
             textElements[0].AppendChild(toastXml.CreateTextNode("A toast example"));
-            textElements[1].AppendChild(toastXml.CreateTextNode("Here's a message from your background task"));
+            textElements[1].AppendChild(toastXml.CreateTextNode("You've changed timezones!"));
             ToastNotification notification = new ToastNotification(toastXml);
             notification.ExpirationTime = DateTime.Now.AddMinutes(5);
             ToastNotificationManager.CreateToastNotifier().Show(notification);

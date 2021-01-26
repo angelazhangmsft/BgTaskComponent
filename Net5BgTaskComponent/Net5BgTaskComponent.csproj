@@ -15,10 +15,6 @@
         <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.13" />
         <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.13" />
     </ItemGroup>
-    
-    <PropertyGroup>
-    <CopyLocalLockFileAssemblies Condition="$(CsWinRTComponent)==true">true</CopyLocalLockFileAssemblies>
-  </PropertyGroup>
         
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1" />
