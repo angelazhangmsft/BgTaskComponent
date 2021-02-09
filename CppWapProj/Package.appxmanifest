@@ -7,12 +7,12 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="42386dbc-4c82-4cfc-9b40-ad1326eea5bb"
+    Name="93a289f5-79e2-472a-ac4b-ad64680e30f1"
     Publisher="CN=angzhang"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>WapProj</DisplayName>
+    <DisplayName>CppWapProj</DisplayName>
     <PublisherDisplayName>angzhang</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -31,36 +31,29 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="WapProj"
-        Description="WapProj"
+        DisplayName="CppWapProj"
+        Description="CppWapProj"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
-      <Extensions>
-          <Extension Category="windows.backgroundTasks" EntryPoint="Net5BgTaskComponent.BgTask">
-              <BackgroundTasks>
-                  <Task Type="systemEvent"/>
-              </BackgroundTasks>
-          </Extension>
-
-      </Extensions>
     </Application>
   </Applications>
+    
+     <!--This extension is required to activate the background task component--> 
+    <Extensions>
+        <Extension Category="windows.activatableClass.inProcessServer">
+            <InProcessServer>
+                <Path>WinRT.Host.dll</Path>
+                <ActivatableClass ActivatableClassId="Net5BgTaskComponent.BgTask" ThreadingModel="both" />
+            </InProcessServer>
+        </Extension>
+    </Extensions>
 
-  <!-- Must add the bgtask activatable class extension to appxmanifest -->
-  <Extensions>
-    <Extension Category="windows.activatableClass.inProcessServer">
-      <InProcessServer>
-        <Path>WinRT.Host.dll</Path>
-          <ActivatableClass ActivatableClassId="Net5BgTaskComponent.BgTask" ThreadingModel="both" />
-      </InProcessServer>
-    </Extension>
-  </Extensions>
- 
   <Capabilities>
+    <Capability Name="internetClient" />
     <rescap:Capability Name="runFullTrust" />
   </Capabilities>
 </Package>

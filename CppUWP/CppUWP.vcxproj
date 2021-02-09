@@ -68,6 +68,9 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DesktopCompatible>true</DesktopCompatible>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -194,11 +197,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <!-- WinMD reference to the bgtask -->
-    <Reference Include="Net5BgTaskComponent">
-      <HintPath>..\Net5BgTaskComponent\Generated Files\Net5BgTaskComponent.winmd</HintPath>
-      <IsWinMDFile>true</IsWinMDFile>
-      <Implementation>WinRT.Host.dll</Implementation>
-    </Reference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

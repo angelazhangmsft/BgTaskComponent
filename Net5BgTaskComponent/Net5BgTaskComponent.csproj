@@ -1,22 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
       <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-      <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
-      <CsWinRTKeepGeneratedSources>true</CsWinRTKeepGeneratedSources>
-      <CsWinRTComponent>true</CsWinRTComponent>
-      <CsWinRTEnableLogging>true</CsWinRTEnableLogging>
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-      <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      <GeneratedFilesDir Condition="'$(GeneratedFilesDir)'==''">$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Generated Files'))</GeneratedFilesDir>
+      <Platforms>x64</Platforms>
   </PropertyGroup>
-
-    <ItemGroup>
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.13" />
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.13" />
-    </ItemGroup>
+    
+  <!-- CsWinRT properties -->
+  <PropertyGroup>
+      <CsWinRTComponent>true</CsWinRTComponent>
+      <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+      <!--<CsWinRTEnableLogging>true</CsWinRTEnableLogging>-->
+  </PropertyGroup>
         
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.2-prerelease.210208.6" />
   </ItemGroup>
+
+    <!-- NuGet package generation properties -->
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.0.0</Version>
+        <PackageOutputPath>.\nuget</PackageOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="nuget\" />
+    </ItemGroup>
+
 </Project>

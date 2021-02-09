@@ -70,12 +70,12 @@
         <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
         <Content Include="Images\StoreLogo.png" />
         <Content Include="Images\Wide310x150Logo.scale-200.png" />
-        <!-- manual hack to copy 5 needed assemblies and runtimeconfig.json -->
-        <Content Include="..\Net5App\bin\Debug\net5.0-windows10.0.19041.0\WinRT.Host.dll">
+         <!--manual hack to copy 5 needed assemblies and runtimeconfig.json--> 
+        <!--<Content Include="..\Net5App\bin\Debug\net5.0-windows10.0.19041.0\WinRT.Host.dll">
             <Link>WinRT.Host.dll</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>              
-        <Content Include="..\Net5App\bin\Debug\net5.0-windows10.0.19041.0\WinRT.Host.Shim.dll">
+        </Content>-->              
+        <!--<Content Include="..\Net5App\bin\Debug\net5.0-windows10.0.19041.0\WinRT.Host.Shim.dll">
             <Link>WinRT.Host.Shim.dll</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
@@ -90,10 +90,9 @@
         <Content Include="..\Net5App\bin\Debug\net5.0-windows10.0.19041.0\Net5BgTaskComponent.dll">
             <Link>Net5BgTaskComponent.dll</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
+        </Content>-->
         <Content Include="WinRT.Host.runtimeconfig.json">
             <DeploymentContent>true</DeploymentContent>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
     <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
