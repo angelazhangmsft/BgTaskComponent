@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-    <UseWPF>true</UseWPF>
-   
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <Platforms>x64</Platforms>
+
+    </PropertyGroup>
 
     <ItemGroup>
         <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.13" />
         <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.13" />
-    </ItemGroup>  
-    
-  <ItemGroup>
-      <ProjectReference Include="..\Net5BgTaskComponent\Net5BgTaskComponent.csproj">
-      </ProjectReference>  
-      
-  </ItemGroup>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Net5BgTaskComponent\Net5BgTaskComponent.csproj">
+        </ProjectReference>
+    </ItemGroup>
     
 </Project>
